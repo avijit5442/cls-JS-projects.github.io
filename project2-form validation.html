@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+       #form{
+           display:flex;
+           flex-direction:column;
+           justify-content:center;
+           align-items:center;
+       } 
+       
+    </style>
+</head>
+<body>
+    <fieldset>
+      <legend style="text-align:center">Sign up Form</legend>
+    <div id="form">
+        <label>
+            Name:
+        </label>
+        <input id="name" type="text"/>
+        <output id="Outn"></output>
+        <br>
+        <label >
+            Number:
+        </label>
+        <input id="number" maxlength="10"/>
+        <output id="OutNumber"></output>
+        <br>
+        <label>
+            Email:
+        </label>
+        <input id="email"/>
+        <output id="Oute"></output>
+        <br>
+        <label>
+            Password:
+        </label>
+        <input type="password" id="pwd"></input>
+        <input onclick="showpwd()" type="checkbox" /> 
+        <label>
+            Show Password
+        </label>
+        <output id="Outpwd"></output>
+        <br>
+        <input type="submit" id="save"/>
+    </div>
+    </fieldset>
+    <script>
+        //name validation
+        document.getElementById("name").addEventListener("input", check1)
+        function check1(){
+            let name=document.getElementById("name").value;
+            if(name.length<=4){ 
+                 document.getElementById("Outn").innerHTML=`Name should be atleast of 5 characters`;
+                 document.getElementById("Outn").style.color="red"
+            }
+            else if(name.length>=4){
+                    document.getElementById("Outn").innerHTML=``
+            }
+        }
+        //Number validation
+        document.getElementById("number").addEventListener("input", check2);
+        function check2(){
+            let number=document.getElementById("number").value
+            if(Number(number.length)<=10){
+                document.getElementById("OutNumber").innerHTML="Please Enter Your Contact Number"
+            }
+            if(Number(number.length)>=10){
+                document.getElementById("OutNumber").innerHTML=""
+            }
+        }
+        //Email validation
+        document.getElementById("email").addEventListener("input",check3);
+        function check3(){
+            let email=document.getElementById("email").value;
+            if(email.match("^([A-Z,a-z,0-9]+)@([A-Z,a-z,0-9])\.([A-Z,a-z]{2-6})$")==null){
+                document.getElementById("Oute").innerHTML =`Please Enter valid Email`;
+                document.getElementById("Oute").style.color="red"
+            }else{
+                document.getElementById("Oute").innerHTML =``;
+            } 
+        }
+        //Password
+        document.getElementById("save").addEventListener("click", check4);
+        function check4(){
+            let pwd=document.getElementById("pwd").value;
+            if(pwd.length==0){
+                document.getElementById("Outpwd").innerHTML="Please Enter Your Password";
+                document.getElementById("Outpwd").style.color="red"
+            }
+            else{
+                document.getElementById("Outpwd").innerHTML=``  
+            }
+        }
+        ////Password Show
+         function showpwd(){
+            let pwd=document.getElementById("pwd");
+             if(pwd.type=`password`){
+               pwd.type=`text` 
+             }
+             else{
+                pwd.type=`password`
+             }
+         }
+        
+    </script>
+</body>
+</html>

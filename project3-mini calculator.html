@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="number1" placeholder="Enter First Number"/>
+    <input id="number2" placeholder="Enter Second Number"/>
+    <br/><br/>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="divide()">/</button>
+    <br/><br/>
+    <output id="ResultArea">Result is:</output>
+    <script>
+      
+     add=() => {
+        let number1=document.getElementById("number1").value;
+        let number2=document.getElementById("number2").value;
+         var resNumber=Number(number1)+Number(number2);
+         document.getElementById("ResultArea").innerHTML=`Addition of ${number1} and ${number2} is ${resNumber}`;
+         document.getElementById("ResultArea").style.color="green"
+     }
+     sub=()=>{
+        let number1=document.getElementById("number1").value;
+        let number2=document.getElementById("number2").value;
+         var resNumber=Number(number1)-Number(number2);
+         document.getElementById("ResultArea").innerHTML=`Substraction of ${number1} and ${number2} is ${resNumber}`;
+         document.getElementById("ResultArea").style.color="red"
+     }
+     multiply=()=>{
+        let number1=document.getElementById("number1").value;
+        let number2=document.getElementById("number2").value;
+         var resNumber=Number(number1)*Number(number2);
+         document.getElementById("ResultArea").innerHTML=`Multiplication of ${number1} and ${number2} is ${resNumber}`;
+         document.getElementById("ResultArea").style.color="blue"
+     }
+     divide=()=>{
+        let number1=document.getElementById("number1").value;
+        let number2=document.getElementById("number2").value;
+        let resnumber=Number(number1)/Number(number2);
+        document.getElementById("ResultArea").style.color="red";
+        document.getElementById("ResultArea").innerHTML=`Divide of ${number1} and ${number2} is ${resnumber}`;
+     }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Choose What you love to listen</h3>
+    <button onclick="choose()">Choose Song Type</button>
+    <output id="resultArea"></output>
+    <script>
+         let moods=[`Sad`,`Romantic`,`classical`,`pop`,`rap`,`regional`,`devotional`,`Dance`,`Rock`,`Hip-hop`,`Ballets`,`English`]
+         let year=[`60s`,`70s`,`80s`,`90s`,`20th Century`]
+        function choose(){
+         let RandomMood=Math.floor(Math.random(moods)*14);
+         let RandomYear=Math.round(Math.random(year)*6);
+         let R=moods[RandomMood];
+         let Y=year[RandomYear];
+         document.getElementById("resultArea").innerHTML=` Song-Type:${R} songs of Year:${Y}`
+        }
+    </script>
+</body>
+</html>
